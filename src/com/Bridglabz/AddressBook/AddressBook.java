@@ -97,6 +97,13 @@ public class AddressBook {
 
     }
 
+    // Display Contact details.....
+    public void display() {
+        for (Contacts contacts : set) {
+            System.out.println(contacts);
+        }
+    }
+
 
     static boolean ordering = true;
 
@@ -124,7 +131,8 @@ public class AddressBook {
                 // View Contact details....
                 case 2:
                     System.out.println("View Contact details....");
-
+                    addressBook.display();
+                    break;
                     // Update Contacts.....
                 case 3:
                     System.out.println("Update Contacts: ");
