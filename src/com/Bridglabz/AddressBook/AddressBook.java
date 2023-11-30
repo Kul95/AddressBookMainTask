@@ -4,17 +4,18 @@ import java.util.HashSet;
 import java.util.Scanner;
 
 public class AddressBook {
-    HashSet<Contacts> set=new HashSet<>();
-    Scanner sc=new Scanner(System.in);
-    public void addContact(){
+    HashSet<Contacts> set = new HashSet<>();
+    Scanner sc = new Scanner(System.in);
+
+    public void addContact() {
         System.out.println("Add details: ");
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("Enter first name:");
-        String firstName=sc.nextLine();
+        String firstName = sc.nextLine();
         System.out.println("Enter last name:");
-        String lastName=sc.nextLine();
+        String lastName = sc.nextLine();
         System.out.println("Enter the address : ");
-        String address=sc.nextLine();
+        String address = sc.nextLine();
         System.out.println("Enter the city: ");
         String city = sc.nextLine();
         System.out.println("Enter the state: ");
@@ -25,10 +26,11 @@ public class AddressBook {
         long phone = sc.nextLong();
         System.out.println("Enter the email: ");
         String email = sc.nextLine();
-        Contacts contacts=new Contacts(firstName,lastName,address,city,state,zip,phone,email);
+        Contacts contacts = new Contacts(firstName, lastName, address, city, state, zip, phone, email);
         set.add(contacts);
         System.out.println("Contact details added successfully...." + set);
     }
+
 
     // Update Contact details method.....
     public void updateContacts() {
@@ -36,7 +38,7 @@ public class AddressBook {
         System.out.println("Enter your first name: ");
         Scanner scanner = new Scanner(System.in);
         String firstName = scanner.nextLine();
-        for (Contacts contacts11:set) {
+        for (Contacts contacts11 : set) {
             if (contacts11.getFirstName().equals(contacts11.firstName)) {
                 System.out.println("Enter the first name: ");
                 String firstName1 = sc.nextLine();
@@ -74,12 +76,32 @@ public class AddressBook {
         }
     }
 
+    // Delete Contact details....
+    public void deleteContacts() {
+        boolean found = false;
+        System.out.println("Enter your first name: ");
+        String firstName = sc.nextLine();
+        Contacts contactDelete = null;
+        for (Contacts contacts2 : set) {
+            if (contacts2.getFirstName().equals(contacts2.firstName)) {
+                contactDelete = contacts2;
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("Contact details is not present..");
+        } else {
+            set.remove(contactDelete);
+            System.out.println("Contact details deleted successfully");
+        }
 
+    }
 
 
     static boolean ordering = true;
+
     public static void main(String[] args) {
-        AddressBook addressBook=new AddressBook();
+        AddressBook addressBook = new AddressBook();
         Scanner sc = new Scanner(System.in);
         // Do while loop....
         do {
@@ -99,14 +121,19 @@ public class AddressBook {
                     System.out.println("Add Contacts: ");
                     addressBook.addContact();
                     break;
-                // Update Contacts.....
+                // View Contact details....
                 case 2:
+                    System.out.println("View Contact details....");
+
+                    // Update Contacts.....
+                case 3:
                     System.out.println("Update Contacts: ");
                     addressBook.updateContacts();
                     break;
                 // Delete Contacts....
                 case 4:
                     System.out.println("Delete Contacts: ");
+                    addressBook.deleteContacts();
                     break;
                 default:
                     System.out.println("Please enter valid choice: ");
