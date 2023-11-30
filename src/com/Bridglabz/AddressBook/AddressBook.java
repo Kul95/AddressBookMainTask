@@ -104,6 +104,17 @@ public class AddressBook {
         }
     }
 
+    // Add multiple contacts in addressBook...
+    public void addMultipleContacts(){
+        System.out.println("Enter number of contacts to add into  AddressBook...");
+        int num=sc.nextInt();
+        for (int i=0;i<num;i++){
+            addContact();
+            System.out.println(i+1);
+            System.out.println("Multiple Contact added successfully in your addressBook...");
+        }
+    }
+
 
     static boolean ordering = true;
 
@@ -121,6 +132,7 @@ public class AddressBook {
                     + "\n6. Exit ");
             System.out.println("Enter the choice! :");
             int choice = sc.nextInt();
+
             // Switch Cases..........
             switch (choice) {
                 //Add contacts...
@@ -143,12 +155,14 @@ public class AddressBook {
                     System.out.println("Delete Contacts: ");
                     addressBook.deleteContacts();
                     break;
+                // Exit from program
+                case 5:
+                    System.out.println("Ability to add multiple AddressBook..");
+                    addressBook.addMultipleContacts();
+                    break;
+                case 6:
                 default:
                     System.out.println("Please enter valid choice: ");
-                    break;
-                // Exit from program
-                case 6:
-                    System.out.println("Exit  " + "\n Thank you for using This application");
                     break;
 
             }
