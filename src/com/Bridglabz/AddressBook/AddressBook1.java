@@ -3,8 +3,7 @@ package com.Bridglabz.AddressBook;
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class AddressBook {
-
+public class AddressBook1 {
     HashSet<Contacts> set = new HashSet<>();
     Scanner sc = new Scanner(System.in);
 
@@ -106,15 +105,14 @@ public class AddressBook {
     }
 
     // Add multiple contacts in addressBook...
-    public void addMultipleContacts() {
+    public void addMultipleContacts(){
         System.out.println("Enter number of contacts to add into  AddressBook...");
-        int num = sc.nextInt();
-        for (int i = 0; i < num; i++) {
+        int num=sc.nextInt();
+        for (int i=0;i<num;i++){
             addContact();
-            System.out.println(i + 1);
+            System.out.println(i+1);
             System.out.println("Multiple Contact added successfully in your addressBook...");
         }
     }
-
 
 }

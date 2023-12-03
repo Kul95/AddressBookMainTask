@@ -3,8 +3,7 @@ package com.Bridglabz.AddressBook;
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class AddressBook {
-
+public class AddressBook2 {
     HashSet<Contacts> set = new HashSet<>();
     Scanner sc = new Scanner(System.in);
 
@@ -95,7 +94,6 @@ public class AddressBook {
             set.remove(contactDelete);
             System.out.println("Contact details deleted successfully");
         }
-
     }
 
     // Display Contact details.....
@@ -115,6 +113,5 @@ public class AddressBook {
             System.out.println("Multiple Contact added successfully in your addressBook...");
         }
     }
-
 
 }
